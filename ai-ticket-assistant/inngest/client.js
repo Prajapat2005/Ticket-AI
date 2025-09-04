@@ -4,5 +4,5 @@ dotenv.config()
 
 export const inngest = new Inngest({
     id: "ticketing-system",
-    signingKey: process.env.INNGEST_SIGNKEY_KEY
+    signingKey: process.env.INNGEST_SIGNING_KEY
 });

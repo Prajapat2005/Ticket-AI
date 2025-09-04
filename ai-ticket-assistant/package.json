@@ -4,8 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
-    "inngest-dev": "npx inngest-cli@latest dev"
+    "dev": "concurrently \"nodemon index.js\" \"npx inngest-cli@latest dev\""
   },
   "author": "",
   "license": "ISC",

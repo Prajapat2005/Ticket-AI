@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config()
 
 export default function AdminPanel() {
   const [users, setUsers] = useState([]);
@@ -17,7 +19,7 @@ export default function AdminPanel() {
   const fetchUsers = async () => {
     try {
 
-      const res = await axios.get(`http://localhost:3000/api/auth/users`, {
+      const res = await axios.get(`${process.env.BACKEND_URL}/api/auth/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -46,7 +48,7 @@ export default function AdminPanel() {
 
   const handleUpdate = async () => {
     try {
-      const res = await axios.post(`http://localhost:3000/api/auth/update-user`,
+      const res = await axios.post(`${process.env.BACKEND_URL}/api/auth/update-user`,
         JSON.stringify({
           email: editingUser,
           role: formData.role,

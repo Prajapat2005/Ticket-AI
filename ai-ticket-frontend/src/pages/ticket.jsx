@@ -14,7 +14,7 @@ export default function TicketDetailsPage() {
     const fetchTicket = async () => {
       try {
 
-        const res = await axios.get(`http://localhost:3000/api/tickets/${id}`, {
+        const res = await axios.get(`${process.env.BACKEND_URL}/api/tickets/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

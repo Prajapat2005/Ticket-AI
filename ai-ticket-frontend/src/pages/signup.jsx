@@ -17,7 +17,7 @@ export default function SignupPage() {
 
     try {
 
-      const res = await axios.post(`http://localhost:3000/api/auth/signup`,
+      const res = await axios.post(`${process.env.BACKEND_URL}/api/auth/signup`,
         form,
         {
           headers: {

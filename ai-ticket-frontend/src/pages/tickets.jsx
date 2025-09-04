@@ -12,7 +12,7 @@ export default function Tickets() {
   const fetchTickets = async () => {
     try {
 
-      const res = await axios.get(`${process.env.BACKEND_URL}/api/tickets`, {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/tickets`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -36,7 +36,7 @@ export default function Tickets() {
     setLoading(true);
     try {
 
-      const res = await axios.post(`${process.env.BACKEND_URL}/api/tickets`,
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/tickets`,
         form,
         {
           headers: {

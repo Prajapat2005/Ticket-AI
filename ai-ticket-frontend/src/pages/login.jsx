@@ -16,7 +16,7 @@ export default function LoginPage() {
     setLoading(true);
     try {
 
-      const res = await axios.post(`${process.env.BACKEND_URL}/api/auth/login`,
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`,
         form,
         {
           headers: {
